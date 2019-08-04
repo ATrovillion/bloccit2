@@ -11,5 +11,18 @@ module.exports = {
         .catch((err) => {
             callback(err);
         })
+    },
+
+    addAd(newAd, callback){
+        return Ad.create({
+            title: newAd.title,
+            description: newAd.description
+        })
+        .then((ad) => {
+            callback(null, ad);
+        })
+        .catch((err) => {
+            callback(err);
+        })
     }
 }
